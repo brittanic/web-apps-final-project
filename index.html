@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!--<link href="https://fonts.googleapis.com/css?family=Cardo|Montserrat" rel="stylesheet">-->
+  <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+
+<title>Social Media Addiction</title>
+
+</head>
+
+<body>
+<header>
+  <!--<h1> Social Media Addiction</h1>-->
+<nav class="navbar navbar-exapnd-xl bg-secondary fixed-top navbar-dark">
+
+  <div class="container-fluid">
+
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menuNav"><span class="navbar-toggler-icon"></span></button>
+
+    <a class="nav-brand" href="#page-carousel">Social Media Addiction</a>
+
+    <section class="collapse navbar-collapse" id="menuNav">
+      <div class="navbar-nav ml-auto">
+  			<a class="nav-item nav-link" href="#page-carousel">Home</a>
+  			<a class="nav-item nav-link" href="#thestats">The Stats</a>
+  			<a class="nav-item nav-link" href="#page-media">Effects</a>
+        <a class="nav-item nav-link" href="#page-footer">More Info</a>
+		  </div>
+    </section>
+
+
+  </div>
+</nav>
+</header>
+
+<div class="container">
+<article id="page-carousel" class="page-section">
+  <section class="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active" id="question1">
+            <img class="d-block w-100" src="images/carousel1.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Dou you wake up in the morning, reach for your phone, and the first thing you open is a social media app? Image source: <a href="https://www.flickr.com/photos/145362038@N02/41522888305">Boseland Corp.</a></h5>
+            </div>
+          </div>
+          <div class="carousel-item" id="question2">
+            <img class="d-block w-100" src="images/carousel2.jpg" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Are you unable to make it through the bus ride to campus or the walk to class without scrolling through your feed? Image by: <a href="https://commons.wikimedia.org/wiki/File:People_engaging_with_their_phones_on_the_Seoul_Metro_-_5166351572_4e33242d3e_o.jpg"> Marc Smith</a></h5>
+            </div>
+          </div>
+          <div class="carousel-item" id="question3">
+            <img class="d-block w-100" src="images/carousel3.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Do you lose hours of sleep and productivity because you get so caught up in your social media? Image from <a href="https://pxhere.com/en/photo/1443469">Pxhere.com</a></h5>
+              <p>If you answered yes to any of these questions, you make be addicted to social media.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+
+</article>
+</div>
+
+
+<article id="thestats" class="page-section container">
+  <header class="page-section-header container text-center">
+    <h2 class="page-section-title"> The Stats</h2>
+
+  </header>
+  <div>
+  <p class="page-section-text">According to the Merriam-Webster dictionary, social media is defined as forms of electronic communication (such as websites for social networking and microblogging) through which users create online communities to share information, ideas, personal messages, and other content (such as videos). Some of the more popular social networking sites include Facebook, Twitter, Instagram and YouTube. According to social media management resource Hootsuite, Facebook has about 74% of its active users on the site everyday. Twitter has about 46%. Instagram has 60%. And YouTube has about 45%. The average user spends about an hour each day on social media. Considering the fact that the amount of users on these platforms are excess of 1 billion people, these numbers account for a significant amount of people on social media for a significant amount of time. Below is a chart that represents the amount of monthly users on some of the popular social netwroking websites.</p>
+  <p> Source: <a href="https://blog.hootsuite.com/social-media-statistics-for-social-media-managers/#facebook">Hootsuite.com</a> and <a href="https://www.merriam-webster.com/dictionary/social%20media">Merriam-Webster Dictionary</a>
+</div>
+  <div class="col-lg-12">
+  <section class="stats row">
+    <canvas id="myChart" width="300" height="200"></canvas>
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Facebook", "Twitter", "Instagram", "Snapchat", "YouTube", "Pinterest", "Reddit", "LinkedIn"],
+            datasets: [{
+                label: 'Number of Active Monthly Users on Social Networking Sites x 100 Million Source',
+
+                data: [22.30, 3.36, 10.0, 3.03, 19.0, 1.60, 3.30, 1.06],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+    <p>Data from: <a href="https://www.dreamgrow.com/top-15-most-popular-social-networking-sites/">Dreamgrow.com</a>
+  </section>
+  </div>
+</article>
+
+<article id="page-media" class="page-section">
+  <header class="page-section-header container text-center">
+    <h2 class="page-section-title">The Effects</h2>
+    <!--<p class="page-section-text">Here will be text about the effects of social media addiction on young adults.</p>-->
+  </header>
+
+  <section class="layout-media container col-md-9">
+
+    <section class="media">
+      <img class="layout-images" src="images/mike.jpeg" alt="fomo">
+      <div class="media-body">
+        <h4 class="layout-title"> Fear of Missing Out</h4>
+        <p class="layout-text"> Young adults may experience fear of missing out when away from their social media because that is likely their main source for daily information about what's going on in the world. Gif source: <a href="https://makeagif.com/gif/i-hate-hate-hate-being-left-out-ojWR_H?position=2">MakeAGif.com</a>. According to a <a href="https://www.bbc.com/news/technology-39129228">BBC observation</a>, students found that although they missed out on checking their feeds, they found that they had a lot more time to focus on other things. Gif by: <a href="https://makeagif.com/user/cryptoman">Cryptoman</a>.</p>
+      </div>
+    </section>
+
+    <section class="media">
+      <img class="layout-images" src="images/anxiety.gif" alt="anxiety">
+      <div class="media-body">
+        <h4 class="layout-title">Anxiety</h4>
+        <p class="layout-text"> Young adults may experience anxiety from social media addiction. The constant stress of being overwhelmed with information and comparing oneself to another can take a toll on mental health. According to the <a href="https://adaa.org/social-media-obsession">Anxiety and Depression Association of America</a>, this anxiety can also lead to loss of interest in other activities and severe nervousness when you are not able to check your notifications. Gif source: <a href="https://giphy.com/gifs/3o7aD7a2hifhVzzm80">Giphy.com</a>. Gif by: <a href="http://zetrystan.tumblr.com/">Zetrystan</a>.</p>
+      </div>
+    </section>
+
+    <section class="media">
+      <img class="layout-images" src="images/distraction.gif" alt="distraction">
+      <div class="media-body">
+        <h4 class="layout-title" >Distraction</h4>
+        <p class="layout-text"> Acute distraction is also a consequence of being addicted to social media. Many college-aged students can relate to losing countless hours of sleep and productivity just from being so caught up in social media. According to <a href="https://www.businesstoday.in/current/corporate/social-media-affecting-workplace-productivity-report/story/238716.html">TeamLease World of Work Report</a>, 13% of total productivity is lost due to social media indulgence alone.
+        The distraction can also play out in other aspects of an addict's life. Gif source: <a href="https://tenor.com/view/squirrel-dog-up-gif-3461131"> Tenor.com</a>.</p>
+      </div>
+
+    </section>
+
+  </section>
+
+</article>
+
+
+
+
+
+
+
+
+<footer class="page-footer bg-secondary">
+  <p>This assignment was done by Brittani Campbell for her final project for JOU3363</p>
+
+
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
